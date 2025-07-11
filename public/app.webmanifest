@@ -1,0 +1,30 @@
+{
+  "name": "My React App",
+  "short_name": "My React App",
+  "id": "react-pwa.com",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "description": "A React PWA for demo purposes.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "scope": "./",
+  "lang": "en-US",
+  "orientation": "portrait",
+  "dir": "ltr",
+  "display_override": ["window-controls-overlay", "minimal-ui", "fullscreen"],
+  "screenshots": [],
+  "categories": ["utilities", "productivity"]
+}
