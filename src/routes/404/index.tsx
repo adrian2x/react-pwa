@@ -1,9 +1,12 @@
 function NotFoundPage() {
   return (
-    <div className='p-2'>
-      <h1>Not Found</h1>
-    </div>
+    <>
+      <title>Not Found</title>
+      <div className='p-2'>
+        <h1>Not Found</h1>
+      </div>
+    </>
   )
 }
 
-export default NotFoundPage;
+export default NotFoundPage

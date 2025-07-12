@@ -1,7 +1,12 @@
 function HomePage() {
-  return <div className='p-2'>
-    <h1>Home</h1>
-  </div>
+  return (
+    <>
+      <title>Home</title>
+      <div className='p-2'>
+        <h1>Home</h1>
+      </div>
+    </>
+  )
 }
 
-export default HomePage;
+export default HomePage
