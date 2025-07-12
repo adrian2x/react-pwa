@@ -21,11 +21,11 @@ export function Navbar(props: NavbarProps) {
   }
 
   return (
-    <div className={clsx('navbar bg-base-100 min-h-[50px]', props.className)}>
+    <div className={clsx('navbar bg-base-100 min-h-[48px]', props.className)}>
       <div className='navbar-start'>
         <div className='dropdown'>
           <label htmlFor='drawerLeft' className='btn btn-ghost btn-square'>
-            <TbMenu2 size={24} />
+            <TbMenu2 size={22} />
           </label>
         </div>
         <Link to='/' className='text-md font-bold ml-2'>
@@ -69,7 +69,7 @@ export function Navbar(props: NavbarProps) {
                 {user ? (
                   <Avatar>
                     {user.photoURL ? (
-                      <img width={20} src={user.photoURL} referrerPolicy='no-referrer' />
+                      <img src={user.photoURL} referrerPolicy='no-referrer' />
                     ) : (
                       <TbUserCircle size={24} />
                     )}

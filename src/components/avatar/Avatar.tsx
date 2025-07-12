@@ -7,7 +7,7 @@ export type AvatarProps = {
 export function Avatar({ children }: AvatarProps) {
   return (
     <div className='avatar'>
-      <div className='w-10 rounded-full'>{children}</div>
+      <div className='w-7 rounded-full'>{children}</div>
     </div>
   )
 }
