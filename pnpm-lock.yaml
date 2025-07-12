@@ -14,6 +14,7 @@ specifiers:
   globals: ^16.3.0
   react: ^19.1.0
   react-dom: ^19.1.0
+  react-error-boundary: ^6.0.0
   react-icons: ^5.5.0
   react-router: ^7.6.3
   tailwindcss: ^4.1.11
@@ -26,6 +27,7 @@ dependencies:
   clsx: 2.1.1
   react: 19.1.0
   react-dom: 19.1.0_react@19.1.0
+  react-error-boundary: 6.0.0_react@19.1.0
   react-icons: 5.5.0_react@19.1.0
   react-router: 7.6.3_j6k6oay3ugsr56slyfvma2drry
   tailwindcss: 4.1.11
@@ -196,6 +198,11 @@ packages:
       '@babel/core': 7.28.0
       '@babel/helper-plugin-utils': 7.27.1
     dev: true
+
+  /@babel/runtime/7.27.6:
+    resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
+    engines: {node: '>=6.9.0'}
+    dev: false
 
   /@babel/template/7.27.2:
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
@@ -1929,6 +1936,15 @@ packages:
     dependencies:
       react: 19.1.0
       scheduler: 0.26.0
+    dev: false
+
+  /react-error-boundary/6.0.0_react@19.1.0:
+    resolution: {integrity: sha512-gdlJjD7NWr0IfkPlaREN2d9uUZUlksrfOx7SX62VRerwXbMY6ftGCIZua1VG1aXFNOimhISsTq+Owp725b9SiA==}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.27.6
+      react: 19.1.0
     dev: false
 
   /react-icons/5.5.0_react@19.1.0:
