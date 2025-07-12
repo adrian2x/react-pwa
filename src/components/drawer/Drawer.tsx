@@ -5,11 +5,11 @@ export type DrawerProps = {
   id: string
   ref?: ForwardedRef<HTMLInputElement>
   className?: string
-  sidebar: ReactNode
+  drawerContent: ReactNode
   children: ReactNode
 }
 
-export function Drawer({ id, ref, className, sidebar, children }: DrawerProps) {
+export function Drawer({ id, ref, className, drawerContent: sidebar, children }: DrawerProps) {
   const classNames = clsx('drawer', className)
   return (
     <div className={classNames}>

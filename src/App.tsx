@@ -14,7 +14,10 @@ function App() {
   const closeDrawer = () => (drawerLeft.current!.checked = false)
   return (
     <>
-      <Drawer id='drawerLeft' ref={drawerLeft} sidebar={<SidebarNav onNavClick={closeDrawer} />}>
+      <Drawer
+        id='drawerLeft'
+        ref={drawerLeft}
+        drawerContent={<SidebarNav onNavClick={closeDrawer} />}>
         <Navbar />
         {/* See https://reactrouter.com/start/declarative/routing */}
         <AppErrorBoundary>
