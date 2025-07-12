@@ -1,20 +1,20 @@
 import { Link, NavLink } from 'react-router'
-import { TbMenu2, TbDots } from "react-icons/tb";
-import cx from 'clsx'
+import { TbMenu2, TbDots, TbHome, TbInfoCircle, TbUserCircle } from 'react-icons/tb'
+import clsx from 'clsx'
 
 export type NavbarProps = {
   className?: string
 }
 
 export function Navbar(props: NavbarProps) {
-  const className = cx('navbar bg-base-100', props.className)
+  const classNames = clsx('navbar bg-base-100 min-h-[50px]', props.className)
   return (
-    <div className={className}>
+    <div className={classNames}>
       <div className='navbar-start'>
         <div className='dropdown'>
-          <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
-            <TbMenu2 size={24}/>
-          </div>
+          <label htmlFor='drawerLeft' className='btn btn-ghost'>
+            <TbMenu2 size={24} />
+          </label>
           <ul
             tabIndex={0}
             className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'>
@@ -37,7 +37,9 @@ export function Navbar(props: NavbarProps) {
             </li>
           </ul>
         </div>
-        <Link to='/' className='btn btn-ghost text-xl'>daisyUI</Link>
+        <Link to='/' className='text-md font-bold'>
+          Brand
+        </Link>
       </div>
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal px-1'>
@@ -65,16 +67,20 @@ export function Navbar(props: NavbarProps) {
       <div className='navbar-end'>
         <div className='dropdown dropdown-end'>
           <div tabIndex={0} role='button' className='btn btn-ghost'>
-            <TbDots size={24}/>
+            <TbDots size={24} />
           </div>
           <ul
             tabIndex={0}
-            className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'>
+            className='menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow'>
             <li>
-              <NavLink to='/'>Home</NavLink>
+              <NavLink to='/'>
+                <TbHome size={22} /> Home
+              </NavLink>
             </li>
             <li>
-              <a>Parent</a>
+              <a>
+                <TbUserCircle size={22} /> Parent
+              </a>
               <ul className='p-2'>
                 <li>
                   <NavLink to='/'>Home</NavLink>
@@ -85,7 +91,9 @@ export function Navbar(props: NavbarProps) {
               </ul>
             </li>
             <li>
-              <NavLink to='/about'>About</NavLink>
+              <NavLink to='/about'>
+                <TbInfoCircle size={22} /> About
+              </NavLink>
             </li>
           </ul>
         </div>
