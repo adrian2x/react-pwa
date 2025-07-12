@@ -1,9 +1,13 @@
-export function Avatar() {
+import type { ReactNode } from 'react'
+
+export type AvatarProps = {
+  children: ReactNode
+}
+
+export function Avatar({ children }: AvatarProps) {
   return (
     <div className='avatar'>
-      <div className='w-24 rounded'>
-        <img src='https://img.daisyui.com/images/profile/demo/batperson@192.webp' />
-      </div>
+      <div className='w-10 rounded-full'>{children}</div>
     </div>
   )
 }
