@@ -40,12 +40,12 @@ function SidebarNav({ onNavClick }: { onNavClick: () => void }) {
           </li> */}
       <li>
         <NavLink to='/' onClick={onNavClick}>
-          <TbHome size={22} /> Home
+          <TbHome size={20} /> Home
         </NavLink>
       </li>
       <li>
         <NavLink to='/about' onClick={onNavClick}>
-          <TbInfoCircle size={22} /> About
+          <TbInfoCircle size={20} /> About
         </NavLink>
       </li>
     </ul>

@@ -7,9 +7,3 @@
   prefix: ;
   logs: true;
 }
-
-@layer base {
-  .menu li a {
-    padding-block: 0.5rem;
-  }
-}
