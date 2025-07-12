@@ -5,9 +5,9 @@ import './App.css'
 import { Drawer } from './components/drawer/Drawer'
 import { AppErrorBoundary } from './components/error-fallback/ErrorFallback'
 import { Navbar } from './components/navbar/Navbar'
-import About from './routes/About'
-import Home from './routes/Home'
-import NotFound from './routes/NotFound'
+import HomePage from './routes'
+import NotFoundPage from './routes/404'
+import AboutPage from './routes/about'
 
 function App() {
   const drawerLeft = useRef<HTMLInputElement>(null)
@@ -19,10 +19,10 @@ function App() {
         {/* See https://reactrouter.com/start/declarative/routing */}
         <AppErrorBoundary>
           <Routes>
-            <Route index element={<Home />} />
-            <Route path='about' element={<About />} />
+            <Route index element={<HomePage />} />
+            <Route path='about' element={<AboutPage />} />
             {/* Catch-all route for 404 Not Found */}
-            <Route path='*' element={<NotFound />} />
+            <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </AppErrorBoundary>
       </Drawer>
