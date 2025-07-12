@@ -1,43 +1,22 @@
-import { Link, NavLink } from 'react-router'
-import { TbMenu2, TbDots, TbHome, TbInfoCircle, TbUserCircle } from 'react-icons/tb'
 import clsx from 'clsx'
+import { TbDots, TbHome, TbInfoCircle, TbMenu2, TbSearch, TbUserCircle } from 'react-icons/tb'
+import { Link, NavLink } from 'react-router'
+import { Dropdown } from '../dropdown/Dropdown'
 
 export type NavbarProps = {
   className?: string
 }
 
 export function Navbar(props: NavbarProps) {
-  const classNames = clsx('navbar bg-base-100 min-h-[50px]', props.className)
   return (
-    <div className={classNames}>
+    <div className={clsx('navbar bg-base-100 min-h-[50px]', props.className)}>
       <div className='navbar-start'>
         <div className='dropdown'>
-          <label htmlFor='drawerLeft' className='btn btn-ghost'>
+          <label htmlFor='drawerLeft' className='btn btn-ghost btn-square'>
             <TbMenu2 size={24} />
           </label>
-          <ul
-            tabIndex={0}
-            className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'>
-            <li>
-              <NavLink to='/'>Home</NavLink>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className='p-2'>
-                <li>
-                  <NavLink to='/'>Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to='/about'>About</NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <NavLink to='/about'>About</NavLink>
-            </li>
-          </ul>
         </div>
-        <Link to='/' className='text-md font-bold'>
+        <Link to='/' className='text-md font-bold ml-2'>
           Brand
         </Link>
       </div>
@@ -64,22 +43,26 @@ export function Navbar(props: NavbarProps) {
           </li>
         </ul>
       </div>
-      <div className='navbar-end'>
-        <div className='dropdown dropdown-end'>
-          <div tabIndex={0} role='button' className='btn btn-ghost'>
-            <TbDots size={24} />
-          </div>
-          <ul
-            tabIndex={0}
-            className='menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow'>
+      <div className='navbar-end gap-1 md:gap-2'>
+        <div role='button' className='btn btn-ghost btn-circle'>
+          <TbSearch size={22} />
+        </div>
+        <Dropdown
+          className='dropdown-end'
+          trigger={
+            <div tabIndex={0} role='button' className='btn btn-ghost btn-circle'>
+              <TbDots size={22} />
+            </div>
+          }>
+          <ul className='menu bg-base-100 p-2 w-full'>
             <li>
               <NavLink to='/'>
-                <TbHome size={22} /> Home
+                <TbHome size={20} /> Home
               </NavLink>
             </li>
             <li>
               <a>
-                <TbUserCircle size={22} /> Parent
+                <TbUserCircle size={20} /> Parent
               </a>
               <ul className='p-2'>
                 <li>
@@ -92,11 +75,11 @@ export function Navbar(props: NavbarProps) {
             </li>
             <li>
               <NavLink to='/about'>
-                <TbInfoCircle size={22} /> About
+                <TbInfoCircle size={20} /> About
               </NavLink>
             </li>
           </ul>
-        </div>
+        </Dropdown>
       </div>
     </div>
   )
