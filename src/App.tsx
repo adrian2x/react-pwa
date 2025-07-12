@@ -1,12 +1,13 @@
-import { NavLink, Route, Routes } from 'react-router'
-import Home from './routes/Home'
-import About from './routes/About'
-
-import './App.css'
-import { Navbar } from './components/navbar/Navbar'
-import { TbHome, TbInfoCircle } from 'react-icons/tb'
-import { Drawer } from './components/drawer/Drawer'
 import { useRef } from 'react'
+import { TbHome, TbInfoCircle } from 'react-icons/tb'
+import { NavLink, Route, Routes } from 'react-router'
+import './App.css'
+import { Drawer } from './components/drawer/Drawer'
+import { AppErrorBoundary } from './components/error-fallback/ErrorFallback'
+import { Navbar } from './components/navbar/Navbar'
+import About from './routes/About'
+import Home from './routes/Home'
+import NotFound from './routes/NotFound'
 
 function App() {
   const drawerLeft = useRef<HTMLInputElement>(null)
@@ -16,10 +17,14 @@ function App() {
       <Drawer id='drawerLeft' ref={drawerLeft} sidebar={<SidebarNav onNavClick={closeDrawer} />}>
         <Navbar />
         {/* See https://reactrouter.com/start/declarative/routing */}
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-        </Routes>
+        <AppErrorBoundary>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            {/* Catch-all route for 404 Not Found */}
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </AppErrorBoundary>
       </Drawer>
     </>
   )
