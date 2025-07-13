@@ -5,7 +5,6 @@ import './App.css'
 import { Drawer } from './components/drawer/Drawer'
 import { AppErrorBoundary } from './components/error-fallback/ErrorFallback'
 import { Navbar } from './components/navbar/Navbar'
-import { FirebaseUIProvider } from './lib/firebase/ui'
 import HomePage from './routes'
 import NotFoundPage from './routes/404'
 import AboutPage from './routes/about'
@@ -15,23 +14,21 @@ function App() {
   const closeDrawer = () => (drawerLeft.current!.checked = false)
   return (
     <>
-      <FirebaseUIProvider>
-        <Drawer
-          id='drawerLeft'
-          ref={drawerLeft}
-          drawerContent={<SidebarNav onNavClick={closeDrawer} />}>
-          <Navbar />
-          {/* See https://reactrouter.com/start/declarative/routing */}
-          <AppErrorBoundary>
-            <Routes>
-              <Route index element={<HomePage />} />
-              <Route path='about' element={<AboutPage />} />
-              {/* Catch-all route for 404 Not Found */}
-              <Route path='*' element={<NotFoundPage />} />
-            </Routes>
-          </AppErrorBoundary>
-        </Drawer>
-      </FirebaseUIProvider>
+      <Drawer
+        id='drawerLeft'
+        ref={drawerLeft}
+        drawerContent={<SidebarNav onNavClick={closeDrawer} />}>
+        <Navbar />
+        {/* See https://reactrouter.com/start/declarative/routing */}
+        <AppErrorBoundary>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path='about' element={<AboutPage />} />
+            {/* Catch-all route for 404 Not Found */}
+            <Route path='*' element={<NotFoundPage />} />
+          </Routes>
+        </AppErrorBoundary>
+      </Drawer>
     </>
   )
 }

@@ -7,7 +7,7 @@ export type ErrorFallbackProps = {
   resetErrorBoundary?: () => void
 }
 
-export function ErrorFallback({ error, resetErrorBoundary }: ErrorFallbackProps) {
+export function ErrorFallback({ error }: ErrorFallbackProps) {
   // Call resetErrorBoundary() to reset the error boundary and retry the render.
   return (
     <div className='p-2'>
@@ -25,8 +25,9 @@ export function AppErrorBoundary({
   onReset?: () => void
 }) {
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback}
-      onReset={(details) => {
+    <ErrorBoundary
+      FallbackComponent={ErrorFallback}
+      onReset={() => {
         // Reset the state of your app so the error doesn't happen again
         onReset?.()
       }}>
