@@ -18,5 +18,6 @@ export default defineConfig({
         assetFileNames: `assets/[name].[ext]`
       }
     }
-  }
+  },
+  esbuild: { legalComments: 'none' }
 })
