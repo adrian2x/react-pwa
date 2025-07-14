@@ -3,7 +3,7 @@ import { PiSignOutBold } from 'react-icons/pi'
 import { TbDots, TbHome, TbInfoCircle, TbMenu2, TbSearch, TbUserCircle } from 'react-icons/tb'
 import { Link, NavLink, useNavigate } from 'react-router'
 import { useUser } from '../../lib/firebase/hooks'
-import { LoginButton } from '../../lib/firebase/ui'
+import { LoginButton } from '../../lib/firebase/FirebaseUI'
 import { Avatar } from '../avatar/Avatar'
 import { Dropdown } from '../dropdown/Dropdown'
 
