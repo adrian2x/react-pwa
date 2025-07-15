@@ -12,3 +12,9 @@
 
 /* @import "@firebase-ui/styles/src/themes/dark.css"; */
 /* @import "@firebase-ui/styles/src/themes/brutalist.css"; */
+
+@utility menu {
+  & li >*:not(ul, details, .menu-title, .btn) {
+    padding-block: 0.5rem;
+  }
+}
