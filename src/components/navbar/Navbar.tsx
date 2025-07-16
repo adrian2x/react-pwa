@@ -24,7 +24,7 @@ export function Navbar(props: NavbarProps) {
     <div className={clsx('navbar bg-base-100 min-h-[48px]', props.className)}>
       <div className='navbar-start'>
         <div className='dropdown'>
-          <label htmlFor='drawerLeft' className='btn btn-ghost btn-square'>
+          <label htmlFor='drawerLeft' className='btn btn-ghost btn-circle'>
             <TbMenu2 size={22} />
           </label>
         </div>

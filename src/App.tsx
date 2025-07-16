@@ -8,12 +8,14 @@ import { Navbar } from './components/navbar/Navbar'
 import HomePage from './routes'
 import NotFoundPage from './routes/404'
 import AboutPage from './routes/about'
+import LoginPage from './routes/login'
+import { FirebaseUIProvider } from './lib/firebase/FirebaseUI'
 
 function App() {
   const drawerLeft = useRef<HTMLInputElement>(null)
   const closeDrawer = () => (drawerLeft.current!.checked = false)
   return (
-    <>
+    <FirebaseUIProvider>
       <Drawer
         id='drawerLeft'
         ref={drawerLeft}
@@ -24,12 +26,13 @@ function App() {
           <Routes>
             <Route index element={<HomePage />} />
             <Route path='about' element={<AboutPage />} />
+            <Route path='login' element={<LoginPage />} />
             {/* Catch-all route for 404 Not Found */}
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
         </AppErrorBoundary>
       </Drawer>
-    </>
+    </FirebaseUIProvider>
   )
 }
 
