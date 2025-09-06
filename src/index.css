@@ -18,3 +18,11 @@
     padding-block: 0.5rem;
   }
 }
+
+@utility navbar {
+  @apply px-4;
+}
+
+.content {
+  @apply p-6;
+}

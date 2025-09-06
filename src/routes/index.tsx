@@ -2,7 +2,7 @@ function HomePage() {
   return (
     <>
       <title>Home</title>
-      <div className='p-2'>
+      <div className='content'>
         <h1>Home</h1>
       </div>
     </>

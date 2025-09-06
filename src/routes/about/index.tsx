@@ -2,7 +2,7 @@ function AboutPage() {
   return (
     <>
       <title>About</title>
-      <div className='p-2'>
+      <div className='content'>
         <h1>About</h1>
       </div>
     </>
